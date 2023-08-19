@@ -1,0 +1,15 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  ReleaseAndPublish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: |
+          echo "${{ toJSON(github) }}"
